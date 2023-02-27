@@ -10,26 +10,11 @@
           type="text"
           class="input"
           placeholder="Qual terafa voce deseja iniciar?"
+          v-model="descricao"
         />
       </div>
       <div class="column">
-        <div
-          class="is-flex is-align-items-center is-justify-content-space-between"
-        >
-          <CronometroExibicao :tempoEmSegundos="tempoEmSegundos"/>
-          <button class="button" @click="iniciar">
-            <span class="icon">
-              <i class="fas fa-play"></i>
-            </span>
-            <span>play</span>
-          </button>
-          <button class="button" @click="finalizar">
-            <span class="icon">
-              <i class="fas fa-stop"></i>
-            </span>
-            <span>stop</span>
-          </button>
-        </div>
+        <TemporizadorButtons @aoTemporizadorFinalizado="finalizarTarefa" />
       </div>
     </div>
   </div>
@@ -37,27 +22,22 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import CronometroExibicao from "./CronometroExibicao.vue";
+import TemporizadorButtons from "./TemporizadorButtons.vue";
 export default defineComponent({
-  components: { CronometroExibicao },
+  components: { TemporizadorButtons },
   name: "FormularioCronometro",
   data() {
     return {
-      tempoEmSegundos: 0,
-      cronometro: 0,
-    }
+      descricao: "",
+    };
   },
   methods: {
-    iniciar(){
-      this.cronometro = setInterval (()=>{
-        this.tempoEmSegundos += 1;
-      },1000)
+    finalizarTarefa(tempoDecorrido: number): void {
+      console.log(this.descricao + tempoDecorrido);
+      this.descricao = "";
     },
-    finalizar(){
-      clearInterval (this.cronometro); 
-    },
-  }
-})
+  },
+});
 </script>
 
 <style></style>
