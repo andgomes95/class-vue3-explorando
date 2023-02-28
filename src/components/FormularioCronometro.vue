@@ -26,6 +26,7 @@ import TemporizadorButtons from "./TemporizadorButtons.vue";
 export default defineComponent({
   components: { TemporizadorButtons },
   name: "FormularioCronometro",
+  emits: ["aoSalvarTarefa"],
   data() {
     return {
       descricao: "",
@@ -33,7 +34,10 @@ export default defineComponent({
   },
   methods: {
     finalizarTarefa(tempoDecorrido: number): void {
-      console.log(this.descricao + tempoDecorrido);
+      this.$emit("aoSalvarTarefa", {
+        duracaoEmSegundos: tempoDecorrido,
+        descricao: this.descricao,
+      });
       this.descricao = "";
     },
   },
