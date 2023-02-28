@@ -1,5 +1,5 @@
 <template>
-  <div class="box">
+  <div class="box formulario">
     <div class="columns">
       <div
         class="column is-8"
@@ -9,7 +9,7 @@
         <input
           type="text"
           class="input"
-          placeholder="Qual terafa voce deseja iniciar?"
+          placeholder="Qual tarefa voce deseja iniciar?"
           v-model="descricao"
         />
       </div>
@@ -44,4 +44,9 @@ export default defineComponent({
 });
 </script>
 
-<style></style>
+<style>
+.formulario {
+  color: var(--texto-primario);
+  background-color: var(--bg-primario);
+}
+</style>
