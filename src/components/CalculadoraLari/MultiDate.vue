@@ -1,8 +1,8 @@
 <template>
   <div>
     <h1 class="title">Multiplicacao por Horas</h1>
-    <form @submit.prevent="calcular">
-      <div class="field">
+    <form class="formulario columns is-multiline" @submit.prevent="calcular">
+      <div class="field column is-6">
         <label for="multiplicador" class="label"> Valor da Multiplicacao </label>
         <input
           type="number"
@@ -11,7 +11,7 @@
           id="multiplicador"
         />
       </div>
-      <div class="field">
+      <div class="field column is-6">
         <label for="timeToCalculate" class="label"> Hora para Calcular </label>
         <input
           type="time"
@@ -20,7 +20,7 @@
           id="timeToCalculate"
         />
       </div>
-      <div class="field">
+      <div class="field column is-offset-10">
         <button class="button" type="submit">Calcular</button>
       </div>
     </form>

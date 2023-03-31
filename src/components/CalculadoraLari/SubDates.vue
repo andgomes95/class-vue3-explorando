@@ -1,8 +1,8 @@
 <template>
   <div>
     <h1 class="title">Diferenca das Horas</h1>
-    <form @submit.prevent="calcular">
-      <div class="field">
+    <form class="formulario columns is-multiline" @submit.prevent="calcular">
+      <div class="field column is-6">
         <label for="dateInicio" class="label"> Hora Inicio </label>
         <input
           type="time"
@@ -11,7 +11,7 @@
           id="dateInicio"
         />
       </div>
-      <div class="field">
+      <div class="field column is-6">
         <label for="dateFim" class="label"> Hora Fim </label>
         <input
           type="time"
@@ -20,7 +20,7 @@
           id="dateFim"
         />
       </div>
-      <div class="field">
+      <div class="field column is-offset-10">
         <button class="button" type="submit">Calcular</button>
       </div>
     </form>
