@@ -43,12 +43,13 @@
 <script lang="ts">
 import { computed, defineComponent } from "vue";
 import { useStore } from "@/store";
-import { EXCLUIR_PROJETO } from "@/store/tipo-mutacoes";
+import { OBTER_PROJETOS, REMOVER_PROJETO } from "@/store/tipo-acoes";
 
 export default defineComponent({
   name: "ListaProjetos",
   setup() {
     const store = useStore();
+    store.dispatch(OBTER_PROJETOS);
     return {
       store,
       projetos: computed(() => store.state.projetos)
@@ -56,7 +57,7 @@ export default defineComponent({
   },
   methods: {
     excluir(id: string) {
-      this.store.commit(EXCLUIR_PROJETO,id)
+      this.store.dispatch(REMOVER_PROJETO,id)
     }
   }
 });
