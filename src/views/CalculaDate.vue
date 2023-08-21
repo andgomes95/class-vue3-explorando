@@ -3,6 +3,10 @@
   <SubDates />
   <br>
   <MultiDate />
+  <br>
+  <DivDate />
+  <br>
+  <SumDates />
 </section>
 </template>
 
@@ -10,12 +14,16 @@
 import { defineComponent } from 'vue';
 import SubDates from "../components/CalculadoraLari/SubDates.vue";
 import MultiDate from "../components/CalculadoraLari/MultiDate.vue";
+import DivDate from "../components/CalculadoraLari/DivDate.vue";
+import SumDates from "../components/CalculadoraLari/SumDates.vue";
 
 export default defineComponent({
   name: 'CalculaDate',
   components: {
     SubDates,
-    MultiDate
+    MultiDate,
+    DivDate,
+    SumDates
   }
 })
 </script>

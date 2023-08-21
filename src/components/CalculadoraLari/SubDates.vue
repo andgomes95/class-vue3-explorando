@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="title">Diferenca das Horas</h1>
+    <h1 class="title">Intervalo de Horas</h1>
     <form class="formulario columns is-multiline" @submit.prevent="calcular">
       <div class="field column is-6">
         <label for="dateInicio" class="label"> Hora Inicio </label>
